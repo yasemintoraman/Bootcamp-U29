@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float JumpForce;
     [SerializeField] private float horizontalInput;
     [SerializeField] private float verticalInput;
+    [SerializeField] private float jumpInput;
+
     private Rigidbody rigidbodyPlayer;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,10 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         IsonGround = true;
+    }
+    private void Update()
+    {
+        
     }
     private void FixedUpdate()
     {
@@ -45,10 +51,12 @@ public class PlayerController : MonoBehaviour
 
     private void GetJumpInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsonGround)
+        jumpInput = Input.GetAxis("Jump");
+        if (jumpInput != 0 && IsonGround)
         {
             rigidbodyPlayer.velocity = Vector3.up * JumpForce;
             IsonGround = false;
         }
+        Debug.Log("sapce bastý");
     }
 }
