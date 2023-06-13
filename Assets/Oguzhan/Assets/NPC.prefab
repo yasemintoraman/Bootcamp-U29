@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 2545360816425949575}
   - component: {fileID: 8386720430395344064}
   - component: {fileID: 1023896981981088153}
+  - component: {fileID: 7671464123306246503}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -119,7 +120,7 @@ Transform:
   - {fileID: 2305126985821721333}
   - {fileID: 4315714640878407536}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7509362686591984432
 MeshFilter:
@@ -255,6 +256,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.924837, y: 2, z: 6.2492104}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7671464123306246503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2341902674055941718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa231a397e0d61d4882ee637cd2c6cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCameraMovement: 0.3
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2900043082611366149
 GameObject:
   m_ObjectHideFlags: 0

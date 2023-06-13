@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -481,25 +481,6 @@ Transform:
   m_Father: {fileID: 180584210}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 89.925, z: 0}
---- !u!1 &863806971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8351505020465534810, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
-    type: 3}
-  m_PrefabInstance: {fileID: 4067926076716542491}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &863806978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863806971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c3ec72dd4f86ac4aa28359cd84b87a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1148589912}
 --- !u!1 &1148589912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,11 +1519,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8351505020465534810, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 863806978}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55fedf3c3c6355d41b849fa3ff0b49f0, type: 3}
 --- !u!1001 &9096998097963308194
 PrefabInstance:
@@ -1556,11 +1533,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 2900043082611366149, guid: 87833e31e50c8a041a870dbd4f7e3bc9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7402574230099183710, guid: 87833e31e50c8a041a870dbd4f7e3bc9,
         type: 3}

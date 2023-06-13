@@ -57,6 +57,5 @@ public class PlayerController : MonoBehaviour
             rigidbodyPlayer.velocity = Vector3.up * JumpForce;
             IsonGround = false;
         }
-        Debug.Log("sapce bastý");
     }
 }
