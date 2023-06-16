@@ -121,7 +121,7 @@ Transform:
   - {fileID: 4315714640878407536}
   - {fileID: 3329294014347110547}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7509362686591984432
 MeshFilter:
@@ -270,8 +270,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camPoint: {fileID: 3222877243473236426}
+  mainPlayer: {fileID: 8351505020465534810, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
+    type: 3}
   speedCameraMovement: 0.3
   speakCount: 5
+  speakIndex: 0
 --- !u!1 &2900043082611366149
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3222877243473236426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.978, y: 1.098, z: -1.434}
+  m_LocalPosition: {x: 2.739, y: 1.954, z: -2.005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
