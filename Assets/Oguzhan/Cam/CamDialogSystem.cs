@@ -92,15 +92,15 @@ public class CamDialogSystem : MonoBehaviour
     public IEnumerator ExitDialog()
     {
         float travelPercent = 0f;
-        while (travelPercent < 0.4f)
+        while (travelPercent < 0.33f)
         {
             travelPercent += Time.deltaTime * speedCameraMovement;
             Debug.Log(travelPercent);
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, camStartPosition, 0.1f * Time.deltaTime);
-            GameManager.IsDialogStarted = false;
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, mainPlayer.transform.position + mainCamera.GetComponent<CamFollowPlayer>().cameraPosition, travelPercent);
             yield return new WaitForEndOfFrame();
         }
-        
+        GameManager.IsDialogStarted = false;
+
     }
 
 }
