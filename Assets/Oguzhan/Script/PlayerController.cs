@@ -32,36 +32,30 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (GameManager.IsDialogStarted == false)
-        {
-            GetMovementInput();
-            GetJumpInput();
-            GetAttackInput();
-        }
+        GetMovementInput();
+        GetJumpInput();
+        GetAttackInput();
     }
 
-
+    
 
     private void GetMovementInput()
     {
-        if (!playerAnimator.GetBool("IsAttacked"))
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+        Vector3 moveDirection = new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime);
+        rigidbodyPlayer.velocity = new Vector3(horizontalInput * speed * Time.deltaTime, rigidbodyPlayer.velocity.y, verticalInput * speed * Time.deltaTime);
+
+
+        SetBlendTreeValues(horizontalInput, verticalInput);
+
+
+        if (horizontalInput != 0 || verticalInput != 0)
         {
-            horizontalInput = Input.GetAxis("Horizontal");
-            verticalInput = Input.GetAxis("Vertical");
-            Vector3 moveDirection = new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime);
-            rigidbodyPlayer.velocity = new Vector3(horizontalInput * speed * Time.deltaTime, rigidbodyPlayer.velocity.y, verticalInput * speed * Time.deltaTime);
+            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
 
-
-            SetBlendTreeValues(horizontalInput, verticalInput);
-
-
-            if (horizontalInput != 0 || verticalInput != 0)
-            {
-                Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-            }
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
-
 
     }
 
@@ -79,7 +73,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private void SetBlendTreeValues(float horizontal = 0, float vertical = 0)
+    private void SetBlendTreeValues(float horizontal, float vertical)
     {
         float blend = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
         if (blend >= 1)
