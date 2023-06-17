@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CamFollowPlayer : MonoBehaviour
 {
-    [SerializeField] public Vector3 cameraPosition;
+    [SerializeField] private Vector3 cameraPosition;
     [SerializeField] private GameObject mainPlayer;
     private GameObject mainCamera;
     // Update is called once per frame
