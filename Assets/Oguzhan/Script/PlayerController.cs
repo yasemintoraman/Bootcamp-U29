@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,17 +8,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float JumpForce;
-    private float horizontalInput;
-    private float verticalInput;
-    private float jumpInput;
-    private Animator playerAnimator;
+    [SerializeField] private float horizontalInput;
+    [SerializeField] private float verticalInput;
+    [SerializeField] private float jumpInput;
 
     private Rigidbody rigidbodyPlayer;
     // Start is called before the first frame update
     void Start()
     {
         rigidbodyPlayer = GetComponent<Rigidbody>();
-        playerAnimator = transform.GetChild(0).GetComponent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -28,26 +25,19 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-
+        
     }
     private void FixedUpdate()
     {
         GetMovementInput();
         GetJumpInput();
-        GetAttackInput();
     }
-
-    
-
     private void GetMovementInput()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         Vector3 moveDirection = new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime);
         rigidbodyPlayer.velocity = new Vector3(horizontalInput * speed * Time.deltaTime, rigidbodyPlayer.velocity.y, verticalInput * speed * Time.deltaTime);
-
-
-        SetBlendTreeValues(horizontalInput, verticalInput);
 
 
         if (horizontalInput != 0 || verticalInput != 0)
@@ -59,8 +49,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
-
     private void GetJumpInput()
     {
         jumpInput = Input.GetAxis("Jump");
@@ -69,36 +57,5 @@ public class PlayerController : MonoBehaviour
             rigidbodyPlayer.velocity = Vector3.up * JumpForce;
             IsonGround = false;
         }
-    }
-
-
-
-    private void SetBlendTreeValues(float horizontal, float vertical)
-    {
-        float blend = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
-        if (blend >= 1)
-        {
-            playerAnimator.SetFloat("Blend", 1f);
-        }
-        else
-        {
-            playerAnimator.SetFloat("Blend", blend);
-        }
-    }
-
-
-    private void GetAttackInput()
-    {
-        float fire1Input = Input.GetAxis("Fire1");
-
-        if (fire1Input != 0)
-        {
-            playerAnimator.SetBool("IsAttacked", true);
-        }
-        else
-        {
-            playerAnimator.SetBool("IsAttacked", false);
-        }
-
     }
 }
