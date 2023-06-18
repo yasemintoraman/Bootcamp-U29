@@ -41,7 +41,7 @@ cesaretiyle köy halkının hayranlığını kazanır. Genç, çiftçilik yapmay
   puanlamada ilk sprinte 80puanlık kısım verilmiştir.
 - **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden saat 23:00'da yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint1/Sprint1-Daily.docx?raw=true)
 - **Sprint board update: Sprint board screenshotları**:
- ![Backlog 1](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint1/trello.png) 
+![Backlog 1](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint1/trello.png) 
 
 
 - **Oyun Durumu**: 
