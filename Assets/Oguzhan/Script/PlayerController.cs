@@ -37,10 +37,22 @@ public class PlayerController : MonoBehaviour
             GetMovementInput();
             GetJumpInput();
             GetAttackInput();
+            GetShieldInput();
         }
     }
 
+    private void GetShieldInput()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            playerAnimator.SetBool("IsShield",true);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsShield", false);
 
+        }
+    }
 
     private void GetMovementInput()
     {
