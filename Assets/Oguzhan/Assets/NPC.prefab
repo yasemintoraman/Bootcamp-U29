@@ -121,7 +121,7 @@ Transform:
   - {fileID: 4315714640878407536}
   - {fileID: 3329294014347110547}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7509362686591984432
 MeshFilter:
@@ -269,12 +269,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa231a397e0d61d4882ee637cd2c6cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogText: {fileID: 0}
   camPoint: {fileID: 3222877243473236426}
-  mainPlayer: {fileID: 8351505020465534810, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
-    type: 3}
+  mainPlayer: {fileID: 0}
   speedCameraMovement: 0.3
-  speakCount: 5
+  speakCount: 3
   speakIndex: 0
+  diyalogBaloons:
+  - "Merhaba dostum, benim ad\u0131m Hasan hen\xFCz senin i\xE7in bir g\xF6revim
+    yok"
+  - "Merhaba Hasan, bende Player g\xF6r\xFC\u015F\xFCr\xFCz"
+  - "G\xF6r\xFC\u015F\xFCr\xFCz Player"
 --- !u!1 &2900043082611366149
 GameObject:
   m_ObjectHideFlags: 0

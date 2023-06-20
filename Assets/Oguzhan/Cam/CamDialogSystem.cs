@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CamDialogSystem : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI dialogText;
     [SerializeField] GameObject camPoint;
     [SerializeField] GameObject mainPlayer;
     [SerializeField] private static GameObject speakerNPC;
@@ -16,12 +20,14 @@ public class CamDialogSystem : MonoBehaviour
 
     [SerializeField] private int speakCount;
     [SerializeField] private int speakIndex;
-
+    [SerializeField] string[] diyalogBaloons;
 
     void Start()
     {
+        dialogText = GameObject.Find("DiyalogText").GetComponent<TextMeshProUGUI>();
         mainCamera = GameObject.Find("Main Camera");
         camStartPosition = mainCamera.transform.position;
+        
     }
 
     // Update is called once per frame
@@ -45,6 +51,7 @@ public class CamDialogSystem : MonoBehaviour
     {
 
         GameManager.IsDialogStarted = true;
+        dialogText.enabled = true;
         speakerNPC.transform.LookAt(mainPlayer.transform);
         mainPlayer.transform.LookAt(speakerNPC.transform);
         targetPosition = camPoint.transform.position;
@@ -67,8 +74,9 @@ public class CamDialogSystem : MonoBehaviour
         {
             mainCamera.transform.LookAt(mainPlayer.transform);
         }
+        dialogText.text = diyalogBaloons[speakIndex].ToString();
 
-        if (Input.GetKeyDown(KeyCode.Z) && transform.name == speakerNPC.name)
+        if (Input.GetMouseButtonDown(0) && transform.name == speakerNPC.name)
         {
             speakIndex++;
             Debug.Log(speakIndex);
@@ -83,7 +91,6 @@ public class CamDialogSystem : MonoBehaviour
             DialogSystem();
             if (speakIndex == speakCount)
             {
-                Debug.Log("if içine girdi");
                 speakIndex = 0;
                 StartCoroutine(ExitDialog());
             }
@@ -93,6 +100,7 @@ public class CamDialogSystem : MonoBehaviour
 
     public IEnumerator ExitDialog()
     {
+        dialogText.enabled = false;
         float travelPercent = 0f;
         while (travelPercent < 0.33f)
         {
