@@ -21,7 +21,6 @@ public class CamDialogSystem : MonoBehaviour
     void Start()
     {
         mainCamera = GameObject.Find("Main Camera");
-        targetPosition = camPoint.transform.position;
         camStartPosition = mainCamera.transform.position;
     }
 
@@ -46,6 +45,9 @@ public class CamDialogSystem : MonoBehaviour
     {
 
         GameManager.IsDialogStarted = true;
+        speakerNPC.transform.LookAt(mainPlayer.transform);
+        mainPlayer.transform.LookAt(speakerNPC.transform);
+        targetPosition = camPoint.transform.position;
         float travelPercent = 0f;
         while (travelPercent < 1f)
         {

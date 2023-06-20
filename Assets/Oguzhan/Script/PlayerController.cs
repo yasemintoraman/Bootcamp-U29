@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
     private void GetMovementInput()
     {
-        if (!playerAnimator.GetBool("IsAttacked"))
+        if (!playerAnimator.GetBool("IsAttacked") && !playerAnimator.GetBool("IsShield"))
         {
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
