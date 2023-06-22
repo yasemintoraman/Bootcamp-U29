@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8351505020465534810}
-  m_LocalRotation: {x: -0.02457716, y: 0.3867709, z: 0.010312244, w: 0.9217906}
+  m_LocalRotation: {x: -0.024580572, y: 0.3867747, z: 0.010313797, w: 0.9217889}
   m_LocalPosition: {x: -1.15, y: 1.31, z: -4.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 1118109895245574624}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.055, y: 45.525, z: 0}
 --- !u!65 &8661153334793191935
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71,7 +71,8 @@ MonoBehaviour:
   IsonGround: 1
   speed: 400
   rotationSpeed: 500
-  JumpForce: 4.7
+  JumpForce: 300
+  playerAnimator: {fileID: 0}
 --- !u!54 &2199260028675905202
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Oguzhan/Scene/Oguzhan.unity
     guid: 9973b4ef1298a354583fac369fface44
   - enabled: 1
+    path: Assets/Oguzhan/Scene/MainScene.unity
+    guid: 9c2892be93e89d44a8379933e2fa8763
+  - enabled: 1
     path: Assets/OutdoorsScene.unity
     guid: 8124e5870f4fd4c779e7a5f994e84ad1
   m_configObjects: {}

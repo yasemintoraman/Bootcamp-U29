@@ -17,6 +17,7 @@ public class CamDialogSystem : MonoBehaviour
     private GameObject mainCamera;
     private Vector3 playerPosition;
     private Vector3 targetPosition;
+    private Animator playerAnimator;
 
     [SerializeField] private int speakCount;
     [SerializeField] private int speakIndex;
@@ -27,7 +28,8 @@ public class CamDialogSystem : MonoBehaviour
         dialogText = GameObject.Find("DiyalogText").GetComponent<TextMeshProUGUI>();
         mainCamera = GameObject.Find("Main Camera");
         camStartPosition = mainCamera.transform.position;
-        
+        playerAnimator = GameObject.Find("Player").GetComponentInChildren<Animator>();
+        speakCount = diyalogBaloons.Length;
     }
 
     // Update is called once per frame
@@ -41,6 +43,7 @@ public class CamDialogSystem : MonoBehaviour
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.F))
         {
             speakIndex = 0;
+            Debug.Log("TriggerStayÇalýþtý");
             speakerNPC = gameObject;
             playerPosition = mainPlayer.transform.position;
             StartCoroutine(StartDialog());
@@ -52,6 +55,7 @@ public class CamDialogSystem : MonoBehaviour
 
         GameManager.IsDialogStarted = true;
         dialogText.enabled = true;
+        playerAnimator.SetFloat("Blend",0);
         speakerNPC.transform.LookAt(mainPlayer.transform);
         mainPlayer.transform.LookAt(speakerNPC.transform);
         targetPosition = camPoint.transform.position;
@@ -74,7 +78,8 @@ public class CamDialogSystem : MonoBehaviour
         {
             mainCamera.transform.LookAt(mainPlayer.transform);
         }
-        dialogText.text = diyalogBaloons[speakIndex].ToString();
+        dialogText.text = speakerNPC.GetComponent<CamDialogSystem>().diyalogBaloons[speakerNPC.GetComponent<CamDialogSystem>().speakIndex];
+
 
         if (Input.GetMouseButtonDown(0) && transform.name == speakerNPC.name)
         {
@@ -105,7 +110,6 @@ public class CamDialogSystem : MonoBehaviour
         while (travelPercent < 0.33f)
         {
             travelPercent += Time.deltaTime * speedCameraMovement;
-            Debug.Log(travelPercent);
             mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, mainPlayer.transform.position + mainCamera.GetComponent<CamFollowPlayer>().cameraPosition, travelPercent);
             yield return new WaitForEndOfFrame();
         }
