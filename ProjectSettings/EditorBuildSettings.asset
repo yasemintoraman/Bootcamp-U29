@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Oguzhan/Scene/Oguzhan.unity
+    path: Assets/Oguzhan/Scene/DemoiScenae/Oguzhan.unity
     guid: 9973b4ef1298a354583fac369fface44
+  - enabled: 1
+    path: "Assets/Oguzhan/I\u015F\u0131kl\u0131 Masa Leveli/MasaLevel.unity"
+    guid: 6877efbe34bc5804e99dcfa507ac9f66
   - enabled: 1
     path: Assets/Oguzhan/Scene/MainScene.unity
     guid: 9c2892be93e89d44a8379933e2fa8763

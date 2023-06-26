@@ -110,7 +110,7 @@ public class CamDialogSystem : MonoBehaviour
         while (travelPercent < 0.33f)
         {
             travelPercent += Time.deltaTime * speedCameraMovement;
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, mainPlayer.transform.position + mainCamera.GetComponent<CamFollowPlayer>().cameraPosition, travelPercent);
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, mainPlayer.transform.position + mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric, travelPercent);
             yield return new WaitForEndOfFrame();
         }
         GameManager.IsDialogStarted = false;

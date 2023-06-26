@@ -7,7 +7,7 @@ public class PortalController : MonoBehaviour
 {
     public GameObject BloomPanel;
     private void OnTriggerEnter(Collider other)
-    {
+    { 
         StartCoroutine(EnterPortal());
     }
     // Start is called before the first frame update

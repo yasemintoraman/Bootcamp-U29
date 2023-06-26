@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CamFollowPlayer : MonoBehaviour
 {
-    [SerializeField] public Vector3 cameraPosition;
+    [SerializeField] public Vector3 cameraPositionIsometric;
+    [SerializeField] public Vector3 cameraPositionTwoandHalf;
+
+
+    public static int camPositionValue;
     [SerializeField] private GameObject mainPlayer;
     private GameObject mainCamera;
     // Update is called once per frame
     private void Awake()
     {
-        transform.position = mainPlayer.transform.position + cameraPosition;
+        transform.position = mainPlayer.transform.position + cameraPositionIsometric;
     }
     private void Start()
     {
@@ -18,9 +22,40 @@ public class CamFollowPlayer : MonoBehaviour
     }
     private void LateUpdate()
     {
+        switch (camPositionValue)
+        {
+            case 0:
+                {
+                    IsometricCamPosition();
+                    break;
+                }
+            case 1:
+                {
+                    TwoandHalfCamPosition();
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
+    }
+
+
+    private void IsometricCamPosition()
+    {
         if (GameManager.IsDialogStarted == false)
         {
-            mainCamera.transform.position = mainPlayer.transform.position + cameraPosition;
+            mainCamera.transform.position = mainPlayer.transform.position + cameraPositionIsometric;
+            mainCamera.transform.LookAt(mainPlayer.transform);
+        }
+    }
+
+    private void TwoandHalfCamPosition()
+    {
+        if (GameManager.IsDialogStarted == false)
+        {
+            mainCamera.transform.position = mainPlayer.transform.position + cameraPositionTwoandHalf;
             mainCamera.transform.LookAt(mainPlayer.transform);
         }
     }

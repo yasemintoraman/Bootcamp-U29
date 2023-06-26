@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 518828019529163805}
   - component: {fileID: 3955509449823657596}
+  - component: {fileID: 9165262860922520270}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb1517c708b10940b770c1c4e05dcbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missionContentText: {fileID: 0}
   mainPlayer: {fileID: 0}
   missions: []
   missionPosition1: {fileID: 0}
@@ -55,3 +57,16 @@ MonoBehaviour:
   missionPosition7: {fileID: 0}
   missionPosition8: {fileID: 0}
   missionPosition9: {fileID: 0}
+--- !u!114 &9165262860922520270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6106928096494356360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ed55147d6cec647a1fc59a0a22305f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightMechanicObject: {fileID: 0}
