@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Transform levelStartPosition;
     [SerializeField] private GameObject mainPlayer;
-    [SerializeField] private int healthPlayer = 3;
+    [SerializeField] private int healthPlayer = 1;
     private float timer;
     [SerializeField] private GameObject takingDamageEffect;
     // Start is called before the first frame update
@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
             if (!LightMechanic.IsLightClosed && !PlayerSafeCheck.isPlayerSafe)
             {
                 timer += Time.deltaTime;
+                takingDamageEffect.SetActive(true);
                 if (timer >= 1)
                 {
                     healthPlayer--;
@@ -33,12 +34,18 @@ public class LevelManager : MonoBehaviour
             else if (LightMechanic.IsLightClosed || PlayerSafeCheck.isPlayerSafe)
             {
                 timer = 0;
+                takingDamageEffect.SetActive(false);
+            }
+            if (healthPlayer == 0)
+            {
+                mainPlayer.transform.position = levelStartPosition.position;
+                healthPlayer = 1;
             }
         }
-        if (healthPlayer == 0)
+
+        else if (CamFollowPlayer.camPositionValue == 0)
         {
-            mainPlayer.transform.position = levelStartPosition.position;
-            healthPlayer = 3;
+            takingDamageEffect.SetActive(false);
         }
         Debug.Log(timer);
     }
