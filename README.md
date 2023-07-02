@@ -60,10 +60,11 @@ cesaretiyle köy halkının hayranlığını kazanır. Genç, çiftçilik yapmay
 - **Puan tamamlama mantığı**: İkinci sprintte tamamlanması beklenen puan 100dü ancak üyelerin bayram tatili yoğunluğundan dolayı 53 puanlık kısmı tamamlandı.
 - **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden saat 23:00'da yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 1 Daily Scrum Chats](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint2/Sprint2-Daily.docx?raw=true)
 - **Sprint board update: Sprint board screenshotları**:
--  ![Backlog 1](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint2/trello2.png) 
+-  ![Backlog 1](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint2/trello2.jpg) 
 
 
-- **Oyun Durumu**: 
+- **Oyun Durumu**:
+  
  ![Screenshot 1](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint2/product2.gif)
  ![Screenshot 2](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint2/product3.gif)
 
