@@ -76,7 +76,7 @@ cesaretiyle köy halkının hayranlığını kazanır. Genç, çiftçilik yapmay
   tamamlanmasına karar verilmiştir.
   - Kalan 40 puanlık kısmın 3.sprintte tamamlanmasına karar verilmiştir.
 - **Sprint Notları**:
-  - 2. sprintte plan dışı beklenmedik olaylardan dolayı tamamlanması gereken puanın gerisinde kalındı.
+  - İkinci sprintte plan dışı beklenmedik olaylardan dolayı tamamlanması gereken puanın gerisinde kalındı.
   - Aradaki not farkını kapatabilmek için 3.sprintte daha yoğun çalışılacak.
   
 
