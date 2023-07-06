@@ -32,5 +32,14 @@ public class movement : MonoBehaviour
         {
             transform.position -= new Vector3(0, 0, 0.4f);
         }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.position -= new Vector3(0, -0.4f, 0);
+        }
+        if (Input.GetKey(KeyCode.B))
+        {
+            transform.position -= new Vector3(0, +0.4f, 0);
+        }
     }
 }
