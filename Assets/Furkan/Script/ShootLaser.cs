@@ -6,6 +6,7 @@ public class ShootLaser : MonoBehaviour
 {
     public Material material;
     LaserBeam beam;
+    
 
     void Update()
     {

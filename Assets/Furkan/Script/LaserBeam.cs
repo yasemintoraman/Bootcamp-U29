@@ -67,10 +67,19 @@ public class LaserBeam
 
             CastRay(pos, dir, laser);
         }
+        else if(hitInfo.collider.gameObject.tag == "Door")
+        {
+            DoorOpen();
+        }
         else
         {
             laserIndices.Add(hitInfo.point);
             UptadeLaser();
         }
+    }
+    void DoorOpen()
+    {
+        GameObject.Find("DoorRock").transform.position = Vector3.Lerp(GameObject.Find("DoorRock").transform.position, GameObject.Find("TargetDoor").transform.position, 0.5f * Time.deltaTime);
+        GameObject.Find("DoorRock").transform.Rotate(Vector3.back * 50f * Time.deltaTime);
     }
 }
