@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Oguzhan/UI/UIScene.unity
+    guid: fa497c6a5f89cfa44b0192d652342676
+  - enabled: 1
     path: Assets/Oguzhan/Scene/DemoiScenae/Oguzhan.unity
     guid: 9973b4ef1298a354583fac369fface44
   - enabled: 1
