@@ -63,7 +63,7 @@ public class CamDialogSystem : MonoBehaviour
         while (travelPercent < 1f)
         {
             travelPercent += Time.deltaTime * speedCameraMovement;
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPosition, travelPercent);
+            mainCamera.transform.position = Vector3.Slerp(mainCamera.transform.position, targetPosition, travelPercent);
             yield return new WaitForEndOfFrame();
         }
     }
@@ -110,7 +110,7 @@ public class CamDialogSystem : MonoBehaviour
         while (travelPercent < 0.33f)
         {
             travelPercent += Time.deltaTime * speedCameraMovement;
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, mainPlayer.transform.position + mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric, travelPercent);
+            mainCamera.transform.position = Vector3.Slerp(mainCamera.transform.position, mainPlayer.transform.position + mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric, travelPercent);
             yield return new WaitForEndOfFrame();
         }
         GameManager.IsDialogStarted = false;
