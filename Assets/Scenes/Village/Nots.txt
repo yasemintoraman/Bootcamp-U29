@@ -1,0 +1,4 @@
+- Su materialı yapılacak.
+- Köprülere uygun collider eklenecek.
+- Oğuzhan klasöründekiler yerlerine koyulacak.
+- Işık pişirilip, kamera ve texture optimizasyonları yapılacak.
