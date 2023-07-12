@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - connection
+  - basla
+  - hedef
+  - DropArea
+  - Heykel
+  - Area
   layers:
   - Default
   - TransparentFX
