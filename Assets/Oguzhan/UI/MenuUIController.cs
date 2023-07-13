@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 public class MenuUIController : MonoBehaviour
 {
     public GameObject creditsPopUp;
+    public GameObject howToPlayPopUp;
     public GameObject settingsPopUp;
     public GameObject settingsPopUpEscMenu;
     public GameObject ESCPopUp;
+    public static float musicValue;
 
     private void Update()
     {
@@ -21,7 +23,6 @@ public class MenuUIController : MonoBehaviour
         {
             ESCPopUp.active = false;
         }
-
     }
 
 
@@ -31,15 +32,45 @@ public class MenuUIController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+
+
+
     public void CreditsButtonPressed()
     {
-
+        if (creditsPopUp.active == false)
+        {
+            creditsPopUp.active = true;
+        }
+        else
+        {
+            creditsPopUp.active = false;
+        }
     }
+
+
+
+
+    public void HowtoPlayButtonPressed()
+    {
+        if (settingsPopUp.active == false)
+        {
+            settingsPopUp.active = true;
+        }
+        else
+        {
+            settingsPopUp.active = false;
+        }
+    }
+
+
 
     public void QuitButtonPressed()
     {
         Application.Quit();
     }
+
+
+
 
     public void SettingsButtonPressed()
     {
@@ -53,21 +84,25 @@ public class MenuUIController : MonoBehaviour
         }
     }
 
-    public void SettingsButtonPressedESCMenu()
-    {
-        if (settingsPopUpEscMenu.active == false)
-        {
-            settingsPopUpEscMenu.active = true;
-        }
-        else
-        {
-            settingsPopUpEscMenu.active = false;
-        }
-    }
-
 
     public void BackToMenuPressed()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void CloseCreditsTab()
+    {
+        creditsPopUp.SetActive(false);
+    }
+
+
+    public void CloseHowToPlayTab()
+    {
+        howToPlayPopUp.SetActive(false);
+    }
+
+    public void OpenHowToPlayTab()
+    {
+        howToPlayPopUp.SetActive(true);
     }
 }
