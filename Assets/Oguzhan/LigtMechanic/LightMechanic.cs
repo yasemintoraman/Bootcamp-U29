@@ -50,7 +50,7 @@ public class LightMechanic : MonoBehaviour
     IEnumerator CloseTheLiight()
     {
         CloseLight();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         OpenLight(); 
     }
 }

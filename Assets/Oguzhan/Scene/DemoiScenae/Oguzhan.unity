@@ -181,7 +181,7 @@ PrefabInstance:
     - target: {fileID: 5885959525295405263, guid: bcf64ae197125f849b938b859f31222d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5885959525295405263, guid: bcf64ae197125f849b938b859f31222d,
         type: 3}
@@ -334,7 +334,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &370450767 stripped
 MonoBehaviour:
@@ -1444,7 +1444,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1970785967
 BoxCollider:
@@ -1699,7 +1699,7 @@ PrefabInstance:
     - target: {fileID: 8765743500997094024, guid: 59306e2872c7ba2498d1634a31d864c7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8765743500997094024, guid: 59306e2872c7ba2498d1634a31d864c7,
         type: 3}
@@ -1767,7 +1767,7 @@ PrefabInstance:
     - target: {fileID: 3524631974068607670, guid: d63dc350c6d5c27408a343f7c4ccfd2a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3524631974068607670, guid: d63dc350c6d5c27408a343f7c4ccfd2a,
         type: 3}
@@ -1842,6 +1842,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1754011111819686762, guid: a60b2cbba6256ac4eb6cba33faf52f37,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -248
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222781306745403828, guid: a60b2cbba6256ac4eb6cba33faf52f37,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250134122872249733, guid: a60b2cbba6256ac4eb6cba33faf52f37,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250134122872249733, guid: a60b2cbba6256ac4eb6cba33faf52f37,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -170.70093
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037453371321752533, guid: a60b2cbba6256ac4eb6cba33faf52f37,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogTextBackGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037453371321752533, guid: a60b2cbba6256ac4eb6cba33faf52f37,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4650643025473865111, guid: a60b2cbba6256ac4eb6cba33faf52f37,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1855,7 +1885,7 @@ PrefabInstance:
     - target: {fileID: 4650643025473865111, guid: a60b2cbba6256ac4eb6cba33faf52f37,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4650643025473865111, guid: a60b2cbba6256ac4eb6cba33faf52f37,
         type: 3}
@@ -1951,6 +1981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DiyalogCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948878368957902223, guid: a60b2cbba6256ac4eb6cba33faf52f37,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2169,7 +2204,7 @@ PrefabInstance:
     - target: {fileID: 8012226388675653582, guid: 4c1a3ee44eb53434082add227b03eb98,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8012226388675653582, guid: 4c1a3ee44eb53434082add227b03eb98,
         type: 3}
@@ -2299,6 +2334,42 @@ PrefabInstance:
       propertyPath: mainPlayer
       value: 
       objectReference: {fileID: 1583890448}
+    - target: {fileID: 5549007967267891211, guid: 14be530fdbb8f1e479d867c76d55ea8e,
+        type: 3}
+      propertyPath: diyalogBaloons.Array.data[0]
+      value: "Merhaba evlad\u0131m "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549007967267891211, guid: 14be530fdbb8f1e479d867c76d55ea8e,
+        type: 3}
+      propertyPath: diyalogBaloons.Array.data[1]
+      value: Merhaba dede
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549007967267891211, guid: 14be530fdbb8f1e479d867c76d55ea8e,
+        type: 3}
+      propertyPath: diyalogBaloons.Array.data[2]
+      value: "Bir kar\u0131\u015F\u0131m i\xE7in bir ka\xE7 orman meyvesine ihtiyac\u0131m
+        var"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549007967267891211, guid: 14be530fdbb8f1e479d867c76d55ea8e,
+        type: 3}
+      propertyPath: diyalogBaloons.Array.data[3]
+      value: "Sana yard\u0131m edebilirim dede"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549007967267891211, guid: 14be530fdbb8f1e479d867c76d55ea8e,
+        type: 3}
+      propertyPath: diyalogBaloons.Array.data[4]
+      value: "\xF6ncelikle biraz \xE7al\u0131 topla ve bir sepet yap"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549007967267891211, guid: 14be530fdbb8f1e479d867c76d55ea8e,
+        type: 3}
+      propertyPath: diyalogBaloons.Array.data[5]
+      value: daha sonra ?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549007967267891211, guid: 14be530fdbb8f1e479d867c76d55ea8e,
+        type: 3}
+      propertyPath: diyalogBaloons.Array.data[6]
+      value: "sepetinle beraber oraman git ve sepeti yemi\u015Flerle doldur"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

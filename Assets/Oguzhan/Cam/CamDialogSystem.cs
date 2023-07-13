@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class CamDialogSystem : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI dialogText;
+    public Image dialogTextBackGround;
     [SerializeField] GameObject camPoint;
     [SerializeField] GameObject mainPlayer;
     [SerializeField] private static GameObject speakerNPC;
@@ -25,6 +26,7 @@ public class CamDialogSystem : MonoBehaviour
 
     void Start()
     {
+        dialogTextBackGround = GameObject.Find("DialogTextBackGround").GetComponent<Image>();
         dialogText = GameObject.Find("DiyalogText").GetComponent<TextMeshProUGUI>();
         mainCamera = GameObject.Find("Main Camera");
         camStartPosition = mainCamera.transform.position;
@@ -55,6 +57,7 @@ public class CamDialogSystem : MonoBehaviour
 
         GameManager.IsDialogStarted = true;
         dialogText.enabled = true;
+        dialogTextBackGround.enabled = true;
         playerAnimator.SetFloat("Blend",0);
         speakerNPC.transform.LookAt(mainPlayer.transform);
         mainPlayer.transform.LookAt(speakerNPC.transform);
@@ -106,6 +109,7 @@ public class CamDialogSystem : MonoBehaviour
     public IEnumerator ExitDialog()
     {
         dialogText.enabled = false;
+        dialogTextBackGround.enabled = false;
         float travelPercent = 0f;
         while (travelPercent < 0.33f)
         {

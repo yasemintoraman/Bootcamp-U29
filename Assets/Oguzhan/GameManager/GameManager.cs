@@ -57,13 +57,13 @@ public class GameManager : MonoBehaviour
 
 
         mission2.missionIndex = 1;
-        mission2.missionContent = "Sepet yapabilmek için biraz odun topla";
+        mission2.missionContent = "Sepet yapabilmek için biraz çalý topla";
         mission2.missionStatus = false;
         mission2.missionPosition = missionPosition2;
 
 
         mission3.missionIndex = 2;
-        mission3.missionContent = "Dedeye geri dön";
+        mission3.missionContent = "Dedeye geri dön ve sepet yap";
         mission3.missionStatus = false;
         mission3.missionPosition = missionPosition3;
 

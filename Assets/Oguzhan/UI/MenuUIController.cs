@@ -18,10 +18,13 @@ public class MenuUIController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && ESCPopUp.active == false)
         {
             ESCPopUp.active = true;
+            Time.timeScale = 0;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && ESCPopUp.active == true)
         {
             ESCPopUp.active = false;
+            Time.timeScale = 1;
+
         }
     }
 
