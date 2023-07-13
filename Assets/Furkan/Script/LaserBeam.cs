@@ -51,7 +51,7 @@ public class LaserBeam
         int count = 0;
         laser.positionCount = laserIndices.Count;
 
-        foreach (Vector3 idx in laserIndices ) 
+        foreach (Vector3 idx in laserIndices) 
         { 
             laser.SetPosition(count, idx);
             count++;
@@ -67,7 +67,7 @@ public class LaserBeam
 
             CastRay(pos, dir, laser);
         }
-        else if(hitInfo.collider.gameObject.tag == "Door")
+        else if(hitInfo.collider.gameObject.tag == "Door" && GameObject.Find("DoorRock").transform.position != GameObject.Find("TargetDoor").transform.position)
         {
             DoorOpen();
         }
@@ -77,9 +77,12 @@ public class LaserBeam
             UptadeLaser();
         }
     }
+
     void DoorOpen()
     {
-        GameObject.Find("DoorRock").transform.position = Vector3.Lerp(GameObject.Find("DoorRock").transform.position, GameObject.Find("TargetDoor").transform.position, 0.5f * Time.deltaTime);
+
+        GameObject.Find("DoorRock").transform.position = Vector3.MoveTowards(GameObject.Find("DoorRock").transform.position, GameObject.Find("TargetDoor").transform.position, 2f * Time.deltaTime);
         GameObject.Find("DoorRock").transform.Rotate(Vector3.back * 50f * Time.deltaTime);
+                
     }
 }
