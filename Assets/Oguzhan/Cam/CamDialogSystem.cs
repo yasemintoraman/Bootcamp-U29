@@ -14,15 +14,17 @@ public class CamDialogSystem : MonoBehaviour
     [SerializeField] GameObject mainPlayer;
     [SerializeField] private static GameObject speakerNPC;
     [SerializeField] private float speedCameraMovement;
-    private static Vector3 camStartPosition;
-    private GameObject mainCamera;
-    private Vector3 playerPosition;
-    private Vector3 targetPosition;
-    private Animator playerAnimator;
+    public static Vector3 camStartPosition;
+    public GameObject mainCamera;
+    public Vector3 playerPosition;
+    public Vector3 targetPosition;
+    public Animator playerAnimator;
 
     [SerializeField] private int speakCount;
     [SerializeField] private int speakIndex;
+    [SerializeField] private int konusmaSirasi;
     [SerializeField] string[] diyalogBaloons;
+    [SerializeField] string[] diyalogBaloons2;
 
     void Start()
     {
@@ -30,7 +32,7 @@ public class CamDialogSystem : MonoBehaviour
         dialogText = GameObject.Find("DiyalogText").GetComponent<TextMeshProUGUI>();
         mainCamera = GameObject.Find("Main Camera");
         camStartPosition = mainCamera.transform.position;
-        playerAnimator = GameObject.Find("Player").GetComponentInChildren<Animator>();
+        playerAnimator = mainPlayer.GetComponentInChildren<Animator>();
         speakCount = diyalogBaloons.Length;
     }
 
@@ -49,6 +51,36 @@ public class CamDialogSystem : MonoBehaviour
             speakerNPC = gameObject;
             playerPosition = mainPlayer.transform.position;
             StartCoroutine(StartDialog());
+
+
+            if (gameObject.tag == "Gorev3")
+            {
+                GameManager.currentMissionIndex = 7;
+            }
+
+            else if (gameObject.tag == "Gorev1" && GameManager.currentMissionIndex == 2)
+            {
+                GameManager.currentMissionIndex = 3;
+            }
+
+
+            else if (gameObject.tag == "Gorev2" && GameManager.currentMissionIndex == 5)
+            {
+                GameManager.currentMissionIndex = 6;
+            }
+
+            else if (gameObject.tag == "Gorev2")
+            {
+                GameManager.currentMissionIndex = 4;
+            }
+
+
+            else if (gameObject.tag == "Gorev1")
+            {
+                GameManager.currentMissionIndex = 1;
+            }
+
+
         }
     }
 
@@ -81,7 +113,15 @@ public class CamDialogSystem : MonoBehaviour
         {
             mainCamera.transform.LookAt(mainPlayer.transform);
         }
-        dialogText.text = speakerNPC.GetComponent<CamDialogSystem>().diyalogBaloons[speakerNPC.GetComponent<CamDialogSystem>().speakIndex];
+
+        if (speakerNPC.GetComponent<CamDialogSystem>().konusmaSirasi == 0)
+        {
+            dialogText.text = speakerNPC.GetComponent<CamDialogSystem>().diyalogBaloons[speakerNPC.GetComponent<CamDialogSystem>().speakIndex];
+        }
+        else if (speakerNPC.GetComponent<CamDialogSystem>().konusmaSirasi == 1)
+        {
+            dialogText.text = speakerNPC.GetComponent<CamDialogSystem>().diyalogBaloons2[speakerNPC.GetComponent<CamDialogSystem>().speakIndex];
+        }
 
 
         if (Input.GetMouseButtonDown(0) && transform.name == speakerNPC.name)
@@ -97,7 +137,13 @@ public class CamDialogSystem : MonoBehaviour
         if (GameManager.IsDialogStarted)
         {
             DialogSystem();
-            if (speakIndex == speakCount)
+            if (speakIndex == speakCount && speakerNPC.GetComponent<CamDialogSystem>().konusmaSirasi == 0)
+            {
+                speakIndex = 0;
+                speakerNPC.GetComponent<CamDialogSystem>().konusmaSirasi = 1;
+                StartCoroutine(ExitDialog());
+            }
+            else if (speakIndex == speakerNPC.GetComponent<CamDialogSystem>().diyalogBaloons2.Length && speakerNPC.GetComponent<CamDialogSystem>().konusmaSirasi == 1)
             {
                 speakIndex = 0;
                 StartCoroutine(ExitDialog());

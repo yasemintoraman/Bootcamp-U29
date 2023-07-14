@@ -6,6 +6,11 @@ TagManager:
   tags:
   - TwoandHalfAreaEnd
   - TwoandHalfAreaStart
+  - Gorev3
+  - Gorev2
+  - Gorev1
+  - Wood
+  - Saman
   layers:
   - Default
   - TransparentFX

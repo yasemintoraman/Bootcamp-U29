@@ -3,7 +3,47 @@ guid: 49c37a5a7c31b9b40b61aa3267c17786
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MainCharacter_Pbr
+    second: {fileID: 2100000, guid: d99adebd6f6ad8742a4ac51e60be5ff6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PM3D_Cube3D1_1_Pbr
+    second: {fileID: 2100000, guid: 26e38438a4b80644eabbca5ab35da61d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PM3D_Cube3D1_2_Pbr
+    second: {fileID: 2100000, guid: b1d47b051151ec04f971097576c5d424, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PM3D_Cube3D1_4_Pbr
+    second: {fileID: 2100000, guid: bc9a08ea99851cb46955ae34d3e1dbb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PM3D_Cube3D1_oPP_Pbr
+    second: {fileID: 2100000, guid: 4a36e4e93961b774bb38b9b68052b84e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PM3D_Cylinder3D1_Pbr
+    second: {fileID: 2100000, guid: 8be640a041fc4084189a14d3f2e74f7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PM3D_Ring3D2_Pbr
+    second: {fileID: 2100000, guid: 23cac3f2d4d4c8a4eb436649ce4c9f47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PM3D_Sphere3D1_Pbr
+    second: {fileID: 2100000, guid: d14db331e6c8d074f8d16a484bcc2e04, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
