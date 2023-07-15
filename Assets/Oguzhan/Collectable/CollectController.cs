@@ -17,5 +17,10 @@ public class CollectController : MonoBehaviour
             GorevKontrol.samanCount++;
             Destroy(gameObject);
         }
+        else if (Input.GetKeyDown(KeyCode.E) && CompareTag("Yemis") && other.CompareTag("Player"))
+        {
+            GorevKontrol.yemisCount++;
+            Destroy(gameObject);
+        }
     }
 }
