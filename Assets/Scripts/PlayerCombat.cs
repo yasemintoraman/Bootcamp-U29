@@ -56,13 +56,11 @@ public class PlayerCombat : MonoBehaviour
 
     }
 
-
+    //burasi gerekli degil, gormek icin sadece(build almadan silinebilir)
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
             return;
-
-
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
