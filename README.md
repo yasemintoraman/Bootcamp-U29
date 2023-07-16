@@ -82,24 +82,24 @@ cesaretiyle köy halkının hayranlığını kazanır. Genç, çiftçilik yapmay
   # Sprint 3
 - **Sprint içinde tamamlanması tahmin edilen puan**: 180 Puan
 - **Puan tamamlama mantığı**: Tüm sprintlerde tamamlanması gereken puan tamamlanmıştır.
-- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden gün içerisinde herkese uygun saatlerde yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 2 Daily Scrum Chats](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/Sprint3-Daily.docx?raw=true)
+- **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden gün içerisinde herkese uygun saatlerde yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 3 Daily Scrum Chats](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/Sprint3-Daily.docx?raw=true)
 - **Sprint board update: Sprint board screenshotları**:
 -  ![Backlog 1](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/trello3.JPG) 
 
 
 - **Oyun Durumu**:
   
- ![Screenshot 1](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss1)
+ ![Screenshot 1](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss1.png)
  
- ![Screenshot 2](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss2)
+ ![Screenshot 2](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss2.png)
 
- ![Screenshot 3](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss3)
+ ![Screenshot 3](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss3.png)
 
- ![Screenshot 4](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss4)
+ ![Screenshot 4](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss4.png)
 
- ![Screenshot 5](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss5)
+ ![Screenshot 5](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss5.png)
  
- ![Screenshot 6](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss6)
+ ![Screenshot 6](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss6.png)
  
 
 - **Sprint Review**: Bulmaca mekanikleri tamamlandı. Çöl haritasının assetleri yapıldı. Firebase Analytics kuruldu. API ile etkileşime geçme 
