@@ -112,4 +112,5 @@ cesaretiyle köy halkının hayranlığını kazanır. Genç, çiftçilik yapmay
   - Ekip olarak güzel bir uyum içerisinde başarılı bir bootcamp süreci geçirildiği kanısına varıldı :) 
 - **Sprint Notları**:
   - Toplantı saati 23:00'dan herkese uygun olacak saatlere değiştirildi.
+  - Daha aktif bir süreç için daily toplantılarının bir kısmının Discord üzerinden online olarak yapılmasına karar verildi.
 
