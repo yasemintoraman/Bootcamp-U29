@@ -86,7 +86,7 @@ cesaretiyle köy halkının hayranlığını kazanır. Genç, çiftçilik yapmay
 - **Puan tamamlama mantığı**: Tüm sprintlerde tamamlanması gereken puan tamamlanmıştır.
 - **Daily Scrum**: Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden gün içerisinde herkese uygun saatlerde yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır: [Sprint 3 Daily Scrum Chats](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/Sprint3-Daily.docx?raw=true)
 - **Sprint board update: Sprint board screenshotları**:
--  ![Backlog 1](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/trello3.JPG) 
+   ![Backlog 1](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/trello3.JPG) 
 
 
 - **Oyun Durumu**:
