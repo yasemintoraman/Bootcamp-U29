@@ -103,7 +103,7 @@ cesaretiyle köy halkının hayranlığını kazanır. Genç, çiftçilik yapmay
  ![Screenshot 6](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/ss6.png)
  
 
-- **Sprint Review**: Bulmaca mekanikleri tamamlandı. Çöl haritasının assetleri yapıldı. Firebase Analytics kuruldu. API ile etkileşime geçme 
+- **Sprint Review**: Bulmaca mekanikleri tamamlandı. Çöl haritasının assetleri yapıldı. Firebase Analytics kuruldu. Sunucu ile etkileşime geçme 
                      tamamlandı. Build alındı.
   - Sprint Review Katılımcıları: Çağıl Ezgi Aydemir, Yasemin Toraman, Kadir Furkan Bayram, Oğuzhan Ergün, Yalçın Kaya
 - **Sprint Retrospective**: 
