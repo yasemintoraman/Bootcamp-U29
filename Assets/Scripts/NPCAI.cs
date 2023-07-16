@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class NPCAI2 : MonoBehaviour
+public class NPCAI : MonoBehaviour
 {
 
     public NavMeshAgent _agent; //unityengine.ai
@@ -19,6 +19,21 @@ public class NPCAI2 : MonoBehaviour
 
     public float sightRange, attackRange; //gorus alani, saldiri alani
     public bool playerInSightRange, playerInAttackRange;
+
+    private Animator animator;
+    private List<string> animations;
+
+    private void Start()
+    {
+
+        animator = GetComponent<Animator>();
+        animations = new List<string>()
+            {
+                "Hit1",
+                "Fall1",
+                "Attack1h1",
+            };
+    }
 
     private void Awake() //oyun basladiginda
     {
@@ -82,9 +97,12 @@ public class NPCAI2 : MonoBehaviour
 
     void AttackPlayer()
     {
-        _agent.SetDestination(transform.position); //ates ederken npcnin hareket etmemesini saglariz
+        
 
         transform.LookAt(_player);
+
+        animator.SetTrigger("Attack1h1");
+        /*
         if (!alreadyAttacked)
         {
             //logic
@@ -97,7 +115,8 @@ public class NPCAI2 : MonoBehaviour
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks); //bir daha atak yapabilir hale gelir
         
-        }
+        }*/
+        Invoke(nameof(ResetAttack), timeBetweenAttacks);
     }
 
     void ResetAttack() //atagi durdururuz
