@@ -771,14 +771,14 @@ MonoBehaviour:
   _agent: {fileID: 1263955167}
   _player: {fileID: 317036774}
   ground:
-    serializedVersion: 2
     m_Bits: 64
   player:
-    serializedVersion: 2
     m_Bits: 128
   destinationPoint: {x: 0, y: 0, z: 0}
+  destinationPointSet: 0
   walkPointRange: 50
   timeBetweenAttacks: 1
+  alreadyAttacked: 0
   sphere: {fileID: 2948487743135979666, guid: 336369acd78466b4cb200b011e25af6d, type: 3}
   sightRange: 20
   attackRange: 5
