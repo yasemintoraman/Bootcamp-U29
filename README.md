@@ -1,5 +1,6 @@
 # Bootcamp-U29
 ## Farwees
+-  ![Logo ](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/logo.png)
 
 # Oyun İle İlgili Bilgiler
 
