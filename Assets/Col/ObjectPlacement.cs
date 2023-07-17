@@ -57,13 +57,13 @@ public class ObjectPlacement : MonoBehaviour
                 sculptures[3].transform.position.x == dropareas[6].transform.position.x)
         {
             isSuccess = true;
-            Debug.Log("basarili");
+            
 
             }
         else
         {
             isSuccess = false;
-            Debug.Log("tekrar dene!!1");
+            
             }
 
     }
