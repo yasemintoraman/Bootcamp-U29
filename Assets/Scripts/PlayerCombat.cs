@@ -22,36 +22,32 @@ public class PlayerCombat : MonoBehaviour
     }
     void Update()
     {
-        if (Time.time >= nextAttackTime)
-        {
+
             if (Input.GetMouseButtonDown(0))
             {
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRange; //saniyede sadece 2kez saldirabilir
             }
-        }
+        
     }
 
     void Attack()
     {
+
         //play an attack animation
         playerAnimator.SetBool("IsShield", true);
 
         // detect enemies in range of attack
-        //bu attackpoint diye olusturdugumuz noktada daire olusturuyor ve bu dairenin carptigi nesneleri topluyor
-        //2D icin boyle
-        //Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-        //3D icinse 
-        //vurdugumuz tum dusmanlari bu listede tutuyoruz
+
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
         //damage them
         foreach(Collider enemy in hitEnemies)
         {
             //vurdugumuz dusmanin adini soyluyor
-            //Debug.Log("We hit " + enemy.name);
+            Debug.Log("We hit " + enemy.name);
 
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            enemy.GetComponent<Enemy2>().TakeDamage(attackDamage);
         }
 
     }

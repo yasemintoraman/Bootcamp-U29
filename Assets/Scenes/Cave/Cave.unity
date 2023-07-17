@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4586.066, g: 3259.983, b: 3281.8325, a: 1}
+  m_IndirectSpecularColor: {r: 4600.2407, g: 3259.2153, b: 3252.1099, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3785,22 +3785,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &673740946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673740937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c55e6d2ad5d1a4e8c1d704093f7b39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 673740938}
-  currentHealth: 0
-  maxHealth: 120
-  IsPlayerDead: 0
 --- !u!114 &673740947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3824,7 +3808,6 @@ MonoBehaviour:
   destinationPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 500
   timeBetweenAttacks: 10
-  sphere: {fileID: 0}
   sightRange: 70
   attackRange: 6
   playerInSightRange: 0
@@ -3835,6 +3818,44 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage: 10
   playerCombat: {fileID: 0}
+  npcState: {fileID: 0}
+--- !u!65 &673740949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673740937}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.7430115, y: 2.2071586, z: 3.317629}
+  m_Center: {x: 0.14827126, y: 0.60357887, z: -0.036077745}
+--- !u!114 &673740950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673740937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2245a6911c039244ca9cd685838bd665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 673740938}
+  currentHealth: 0
+  maxHealth: 50
+  IsNpcDead: 0
 --- !u!1001 &738553706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4385,8 +4406,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
-  attackRange: 0.5
-  attackDamage: 40
+  attackRange: 20
+  attackDamage: 25
   attackRate: 2
 --- !u!114 &807842660
 MonoBehaviour:
@@ -4402,7 +4423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 177245833}
   currentHealth: 0
-  maxHealth: 100
+  maxHealth: 10000
   IsPlayerDead: 0
 --- !u!1001 &808509943
 PrefabInstance:
@@ -11126,6 +11147,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8688803186435683820, guid: fd02805ee801de64a828e8190cac7784,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 8756870369409294498, guid: fd02805ee801de64a828e8190cac7784,
         type: 3}
       propertyPath: m_Layer
@@ -11194,7 +11220,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8688803186435683820, guid: fd02805ee801de64a828e8190cac7784,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 673740946}
+      addedObject: {fileID: 673740949}
+    - targetCorrespondingSourceObject: {fileID: 8688803186435683820, guid: fd02805ee801de64a828e8190cac7784,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 673740950}
   m_SourcePrefab: {fileID: 100100000, guid: fd02805ee801de64a828e8190cac7784, type: 3}
 --- !u!1 &1897928376
 GameObject:

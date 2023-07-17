@@ -15,7 +15,6 @@ public class NPCAI : MonoBehaviour
 
     public float timeBetweenAttacks; //attackler arasi zaman
     private bool alreadyAttacked = true;  //attack yapip yapmadigimiz kontrol etmek icin
-    public GameObject sphere; //saldirmak icin sphere atmak gibi
 
     public float sightRange, attackRange; //gorus alani, saldiri alani
     public bool playerInSightRange, playerInAttackRange;
@@ -28,6 +27,10 @@ public class NPCAI : MonoBehaviour
     public int attackDamage;
 
     public Enemy playerCombat;
+    public Enemy2 npcState;
+
+    private float destroyDelay = 1.0f;
+
 
     private void Start()
     {
@@ -38,6 +41,7 @@ public class NPCAI : MonoBehaviour
                 "Hit1",
                 "Fall1",
                 "Attack1",
+                "IsDead",
             };
 
         playerCombat = GameObject.FindGameObjectWithTag("Player").GetComponent<Enemy>();
@@ -50,16 +54,34 @@ public class NPCAI : MonoBehaviour
 
     void Update()
     {
-        //checksphere var olmayan bir collideri kullanabilmemizi saglar
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, player); //belirli bir yerden sonra sightimda old fark edicem
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, player); //cok fazla yaklastiktan sonra saldirmaya baslar
+
+        if (npcState.IsNpcDead)
+        {
+            animator.SetBool("IsDead", true);
+            //StartCoroutine(DestroyAfterDelay(destroyDelay));
+            //return;
 
 
-        //Patrol / Chase / Attack
+        }
+        else
+        {
+            //checksphere var olmayan bir collideri kullanabilmemizi saglar
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, player); //belirli bir yerden sonra sightimda old fark edicem
+            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, player); //cok fazla yaklastiktan sonra saldirmaya baslar
 
-        if (!playerInSightRange && !playerInAttackRange && !playerCombat.IsPlayerDead ) Patroling();
-        if (playerInSightRange && !playerInAttackRange && !playerCombat.IsPlayerDead) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer();
+
+            //Patrol / Chase / Attack
+
+            if (playerCombat.IsPlayerDead)
+            {
+                Patroling();
+                return;
+            }
+
+            if (!playerInSightRange && !playerInAttackRange) Patroling();
+            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+            if (playerInSightRange && playerInAttackRange && !playerCombat.IsPlayerDead) AttackPlayer();
+        }
     }
 
     void Patroling()
@@ -85,7 +107,7 @@ public class NPCAI : MonoBehaviour
 
     void SearchWalkPoint()
     {
-        
+       
         //bizim verdigimiz rangelere gore rastgele yer hesaplariz
         float randomX = Random.Range(-walkPointRange, walkPointRange);
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
@@ -106,8 +128,6 @@ public class NPCAI : MonoBehaviour
 
     void AttackPlayer()
     {
-        if (!playerCombat.IsPlayerDead) // Player ölmediyse saldýrý devam etsin
-        {
             transform.LookAt(_player);
 
             animator.SetBool("attack1", true);
@@ -121,13 +141,7 @@ public class NPCAI : MonoBehaviour
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
             }
 
-            Invoke(nameof(ResetAttack), timeBetweenAttacks * Time.deltaTime);
-        }
-        else // Player öldüyse saldýrýyý durdur
-        {
-            animator.SetBool("attack1", false);
-            animator.SetBool("attack2", false);
-        }
+        Invoke(nameof(ResetAttack), timeBetweenAttacks * Time.deltaTime);
 
     }
 
@@ -135,8 +149,15 @@ public class NPCAI : MonoBehaviour
     {
         alreadyAttacked = false;
     }
-
-    
-
-
+    /*
+    IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GameObject npcObject = GameObject.FindGameObjectWithTag("NPC");
+        if (npcObject != null)
+        {
+            npcObject.SetActive(false);
+        }
+    }
+    */
 }
