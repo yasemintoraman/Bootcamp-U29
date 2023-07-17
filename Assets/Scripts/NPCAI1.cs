@@ -134,11 +134,11 @@ public class NPCAI : MonoBehaviour
         }*/
 
         Invoke(nameof(ResetAttack), timeBetweenAttacks * Time.deltaTime);
+       
     }
 
     void ResetAttack() //atagi durdururuz
     {
-        
         alreadyAttacked = false;
     }
 
