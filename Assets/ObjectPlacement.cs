@@ -8,7 +8,7 @@ public class ObjectPlacement : MonoBehaviour
     public GameObject[] dropareas;
     public GameObject[] sculptures;
 
-    private bool isSuccess = false;
+    public bool isSuccess = false;
 
 
     public float minY = -1.78f;

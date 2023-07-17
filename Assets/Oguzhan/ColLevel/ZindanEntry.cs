@@ -14,7 +14,7 @@ public class ZindanEntry : MonoBehaviour
     public static bool isEntertheZindan;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && ColLevelController.comlekCount >= 5)
         {
             bloomEfeckt.SetActive(true);
             missionText.text = "Mezarlýktaki parþomeni bul";

@@ -23,10 +23,11 @@ public class PortalController : MonoBehaviour
 
     IEnumerator EnterPortal()
     {
-        BloomPanel.GetComponentInChildren<Animator>().SetBool("LevelEnd",true);
-        yield return new WaitForSeconds(1);
-        BloomPanel.GetComponentInChildren<Animator>().SetBool("LevelEnd", false);
+            BloomPanel.GetComponentInChildren<Animator>().SetBool("LevelEnd", true);
+            yield return new WaitForSeconds(1);
+            BloomPanel.GetComponentInChildren<Animator>().SetBool("LevelEnd", false);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
 }

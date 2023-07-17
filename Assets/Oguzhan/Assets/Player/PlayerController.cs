@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
             Vector3 moveDirection = new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime);
             rigidbodyPlayer.velocity = new Vector3(horizontalInput * speed * Time.deltaTime, rigidbodyPlayer.velocity.y, verticalInput * speed * Time.deltaTime);
 
-            CheckPlayerMovement();
+            //CheckPlayerMovement();
             SetBlendTreeValues(horizontalInput, verticalInput);
 
 
