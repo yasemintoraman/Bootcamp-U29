@@ -131,7 +131,7 @@ public class NPCAI : MonoBehaviour
             transform.LookAt(_player);
 
             animator.SetBool("attack1", true);
-            animator.SetBool("attack2", true);
+            //animator.SetBool("attack2", true);
 
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
