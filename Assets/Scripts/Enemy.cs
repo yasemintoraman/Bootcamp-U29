@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     private int currentHealth, maxHealth;
 
     private bool canTakeDamage = true;
+    public bool IsPlayerDead = false;
 
 
     void Start()
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
             if (currentHealth == 0)
             {
                 Die();
+                IsPlayerDead = true;
             }
 
             StartCoroutine(StartDamageCooldown());

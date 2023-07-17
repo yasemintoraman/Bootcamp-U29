@@ -27,6 +27,8 @@ public class NPCAI : MonoBehaviour
     public LayerMask enemyLayers;
     public int attackDamage;
 
+    public Enemy playerCombat;
+
     private void Start()
     {
 
@@ -37,6 +39,8 @@ public class NPCAI : MonoBehaviour
                 "Fall1",
                 "Attack1",
             };
+
+        playerCombat = GameObject.FindGameObjectWithTag("Player").GetComponent<Enemy>();
     }
 
     private void Awake() //oyun basladiginda
@@ -53,8 +57,8 @@ public class NPCAI : MonoBehaviour
 
         //Patrol / Chase / Attack
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (!playerInSightRange && !playerInAttackRange && !playerCombat.IsPlayerDead ) Patroling();
+        if (playerInSightRange && !playerInAttackRange && !playerCombat.IsPlayerDead) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
     }
 
@@ -81,11 +85,12 @@ public class NPCAI : MonoBehaviour
 
     void SearchWalkPoint()
     {
+        
         //bizim verdigimiz rangelere gore rastgele yer hesaplariz
-        float randomX = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
-        float randomZ = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
+        float randomX = Random.Range(-walkPointRange, walkPointRange);
+        float randomZ = Random.Range(-walkPointRange, walkPointRange);
 
-        destinationPoint = new Vector3(transform.position.x + randomX, -transform.position.y, transform.position.z + randomZ);
+        destinationPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         if(Physics.Raycast(destinationPoint, -transform.up, 2.0f, ground)) //eger girmeye calistigim nokta grounddaysa
         {
@@ -101,40 +106,28 @@ public class NPCAI : MonoBehaviour
 
     void AttackPlayer()
     {
-
-
-        transform.LookAt(_player);
-
-        animator.SetBool("attack1", true);
-        animator.SetBool("attack2", true);
-
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
-        //damage them
-        foreach (Collider enemy in hitEnemies)
+        if (!playerCombat.IsPlayerDead) // Player ölmediyse saldýrý devam etsin
         {
-            //vurdugumuz dusmanin adini soyluyor
-            //Debug.Log("We hit " + enemy.name);
-          
+            transform.LookAt(_player);
+
+            animator.SetBool("attack1", true);
+            animator.SetBool("attack2", true);
+
+            Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+
+            //damage them
+            foreach (Collider enemy in hitEnemies)
+            {
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-             
+            }
+
+            Invoke(nameof(ResetAttack), timeBetweenAttacks * Time.deltaTime);
         }
-        /*
-        if (!alreadyAttacked)
+        else // Player öldüyse saldýrýyý durdur
         {
-            //logic
-            //karakterin bir seyler firlattigi bir logic
-            Rigidbody rb = Instantiate(sphere, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            //forward dedigimizde baktigimiz tarafa dogru
-            rb.AddForce(transform.forward * 25f, ForceMode.Impulse); //ileri
-            rb.AddForce(transform.up * 7f, ForceMode.Impulse); //yukari
-
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks); //bir daha atak yapabilir hale gelir
-        
-        }*/
-
-        Invoke(nameof(ResetAttack), timeBetweenAttacks * Time.deltaTime);
+            animator.SetBool("attack1", false);
+            animator.SetBool("attack2", false);
+        }
 
     }
 

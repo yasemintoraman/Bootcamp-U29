@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4594.936, g: 3259.899, b: 3263.5278, a: 1}
+  m_IndirectSpecularColor: {r: 4586.066, g: 3259.983, b: 3281.8325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2158,6 +2158,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8351505020465534810, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9173496368317649899, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
         type: 3}
       propertyPath: m_RootOrder
@@ -2181,7 +2186,7 @@ PrefabInstance:
     - target: {fileID: 9173496368317649899, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1352
+      value: 1350
       objectReference: {fileID: 0}
     - target: {fileID: 9173496368317649899, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
         type: 3}
@@ -2191,7 +2196,7 @@ PrefabInstance:
     - target: {fileID: 9173496368317649899, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 603.08
+      value: 591.4
       objectReference: {fileID: 0}
     - target: {fileID: 9173496368317649899, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
         type: 3}
@@ -3780,35 +3785,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &673740944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673740937}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 859f3def4bfe31b4c8f1bb551402c344, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _agent: {fileID: 673740940}
-  _player: {fileID: 807842652}
-  ground:
-    serializedVersion: 2
-    m_Bits: 256
-  player:
-    serializedVersion: 2
-    m_Bits: 128
-  destinationPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 100
-  timeBetweenAttacks: 2
-  sightRange: 70
-  attackRange: 10
-  playerInSightRange: 0
-  playerInAttackRange: 0
-  animator: {fileID: 0}
-  maxHealth: 100
 --- !u!114 &673740946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3824,6 +3800,7 @@ MonoBehaviour:
   animator: {fileID: 673740938}
   currentHealth: 0
   maxHealth: 120
+  IsPlayerDead: 0
 --- !u!114 &673740947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3845,8 +3822,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   destinationPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 100
-  timeBetweenAttacks: 200
+  walkPointRange: 500
+  timeBetweenAttacks: 10
   sphere: {fileID: 0}
   sightRange: 70
   attackRange: 6
@@ -3856,7 +3833,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  attackDamage: 20
+  attackDamage: 10
+  playerCombat: {fileID: 0}
 --- !u!1001 &738553706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3951,12 +3929,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 295043376}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &749226954 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4061217741349624709, guid: b88af32c1002b7744b2ae7963db57d00,
-    type: 3}
-  m_PrefabInstance: {fileID: 295043376}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &749226956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3969,23 +3941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859f3def4bfe31b4c8f1bb551402c344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 749226957}
-  _player: {fileID: 807842652}
-  ground:
-    serializedVersion: 2
-    m_Bits: 256
-  player:
-    serializedVersion: 2
-    m_Bits: 128
-  destinationPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 10
-  timeBetweenAttacks: 2
-  sightRange: 10
-  attackRange: 5
-  playerInSightRange: 0
-  playerInAttackRange: 0
-  animator: {fileID: 749226954}
-  maxHealth: 100
 --- !u!195 &749226957
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4448,6 +4403,7 @@ MonoBehaviour:
   animator: {fileID: 177245833}
   currentHealth: 0
   maxHealth: 100
+  IsPlayerDead: 0
 --- !u!1001 &808509943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11231,10 +11187,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 673740940}
-    - targetCorrespondingSourceObject: {fileID: 8688803186435683820, guid: fd02805ee801de64a828e8190cac7784,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 673740944}
     - targetCorrespondingSourceObject: {fileID: 8688803186435683820, guid: fd02805ee801de64a828e8190cac7784,
         type: 3}
       insertIndex: -1
