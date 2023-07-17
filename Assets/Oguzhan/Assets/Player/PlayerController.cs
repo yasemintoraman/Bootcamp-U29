@@ -59,8 +59,10 @@ public class PlayerController : MonoBehaviour
         {
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
-            Vector3 moveDirection = new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime);
-            rigidbodyPlayer.velocity = new Vector3(horizontalInput * speed * Time.deltaTime, rigidbodyPlayer.velocity.y, verticalInput * speed * Time.deltaTime);
+            Vector3 moveDirection = transform.TransformDirection(new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime));
+
+            rigidbodyPlayer.velocity = transform.TransformDirection(
+                new Vector3(horizontalInput * speed * Time.deltaTime, rigidbodyPlayer.velocity.y, verticalInput * speed * Time.deltaTime));
 
             //CheckPlayerMovement();
             SetBlendTreeValues(horizontalInput, verticalInput);
