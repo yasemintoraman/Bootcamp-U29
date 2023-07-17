@@ -31,7 +31,7 @@ public class NPCAI : MonoBehaviour
             {
                 "Hit1",
                 "Fall1",
-                "Attack1h1",
+                "Attack1",
             };
     }
 
@@ -97,11 +97,11 @@ public class NPCAI : MonoBehaviour
 
     void AttackPlayer()
     {
-        
+
 
         transform.LookAt(_player);
 
-        animator.SetTrigger("Attack1h1");
+        animator.SetBool("Attack1h1", true);
         /*
         if (!alreadyAttacked)
         {
@@ -116,6 +116,7 @@ public class NPCAI : MonoBehaviour
             Invoke(nameof(ResetAttack), timeBetweenAttacks); //bir daha atak yapabilir hale gelir
         
         }*/
+
         Invoke(nameof(ResetAttack), timeBetweenAttacks);
     }
 
