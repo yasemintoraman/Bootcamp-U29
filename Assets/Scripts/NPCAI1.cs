@@ -105,7 +105,9 @@ public class NPCAI : MonoBehaviour
 
         transform.LookAt(_player);
 
-        animator.SetBool("Attack1h1", true);
+        animator.SetBool("attack1", true);
+        animator.SetBool("attack2", true);
+
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
         //damage them
@@ -131,14 +133,16 @@ public class NPCAI : MonoBehaviour
         
         }*/
 
-        Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        Invoke(nameof(ResetAttack), timeBetweenAttacks * Time.deltaTime);
     }
 
     void ResetAttack() //atagi durdururuz
     {
+        
         alreadyAttacked = false;
     }
 
+    
 
 
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4597.9663, g: 3259.6782, b: 3258.0435, a: 1}
+  m_IndirectSpecularColor: {r: 4593.0444, g: 3259.5278, b: 3266.7036, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1471,14 +1471,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213887520}
-  m_LocalRotation: {x: 0.18096471, y: -0.33701277, z: 0.066177696, w: 0.9215719}
-  m_LocalPosition: {x: 1354.6, y: 69.6, z: 588.8}
+  m_LocalRotation: {x: 0.33545473, y: -0.19124897, z: 0.0074613723, w: 0.922409}
+  m_LocalPosition: {x: 1363.51, y: 87.25, z: 572.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 22.219, y: -40.174, z: 0}
+  m_LocalEulerAnglesHint: {x: 38.441, y: -26.364, z: -8.409}
 --- !u!114 &213887524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ab9455266eb7c4aac62780e31de842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPositionIsometric: {x: 0, y: 0, z: -10}
+  cameraPositionIsometric: {x: 0, y: 10, z: -10}
   cameraPositionTwoandHalf: {x: 0, y: 0, z: 0}
   mainPlayer: {fileID: 807842645}
 --- !u!114 &213887526
@@ -3846,10 +3846,10 @@ MonoBehaviour:
     m_Bits: 128
   destinationPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 100
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 200
   sphere: {fileID: 0}
   sightRange: 70
-  attackRange: 10
+  attackRange: 6
   playerInSightRange: 0
   playerInAttackRange: 0
   attackPoint: {fileID: 1919810496}
