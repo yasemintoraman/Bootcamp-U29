@@ -22,5 +22,10 @@ public class CollectController : MonoBehaviour
             GorevKontrol.yemisCount++;
             Destroy(gameObject);
         }
+        else if (Input.GetKeyDown(KeyCode.E) && CompareTag("Comlek") && other.CompareTag("Player"))
+        {
+            ColLevelController.comlekCount++;
+            Destroy(gameObject);
+        }
     }
 }

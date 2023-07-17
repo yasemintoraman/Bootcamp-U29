@@ -12,6 +12,9 @@ TagManager:
   - Wood
   - Saman
   - Yemis
+  - Area
+  - Heykel
+  - Comlek
   layers:
   - Default
   - TransparentFX
