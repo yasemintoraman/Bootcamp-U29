@@ -23,6 +23,10 @@ public class NPCAI : MonoBehaviour
     private Animator animator;
     private List<string> animations;
 
+    public Transform attackPoint;
+    public LayerMask enemyLayers;
+    public int attackDamage;
+
     private void Start()
     {
 
@@ -81,7 +85,7 @@ public class NPCAI : MonoBehaviour
         float randomX = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
         float randomZ = UnityEngine.Random.Range(-walkPointRange, walkPointRange);
 
-        destinationPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        destinationPoint = new Vector3(transform.position.x + randomX, -transform.position.y, transform.position.z + randomZ);
 
         if(Physics.Raycast(destinationPoint, -transform.up, 2.0f, ground)) //eger girmeye calistigim nokta grounddaysa
         {
@@ -102,6 +106,16 @@ public class NPCAI : MonoBehaviour
         transform.LookAt(_player);
 
         animator.SetBool("Attack1h1", true);
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+
+        //damage them
+        foreach (Collider enemy in hitEnemies)
+        {
+            //vurdugumuz dusmanin adini soyluyor
+            //Debug.Log("We hit " + enemy.name);
+
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+        }
         /*
         if (!alreadyAttacked)
         {

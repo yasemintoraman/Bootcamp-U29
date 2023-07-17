@@ -10,7 +10,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
 
     public float attackRange = 0.5f;
-    public int attackDamage = 50;
+    public int attackDamage;
 
     //saldiri zamanini sinirlamak icin, mousea art arda bastikca her seferinde attacki engellemek icin
     public float attackRate = 2f;

@@ -6,8 +6,8 @@ public class Enemy : MonoBehaviour
 {
     public Animator animator;
 
-    public int maxHealth = 100;
-    int currentHealth;
+    [SerializeField]
+    private int currentHealth, maxHealth;
 
 
     void Start()
@@ -23,11 +23,10 @@ public class Enemy : MonoBehaviour
 
         animator.SetTrigger("Hit1");
 
-        if(currentHealth <= 0)
+        if (currentHealth == 0)
         {
             Die();
         }
-
 
     }
 
@@ -39,9 +38,6 @@ public class Enemy : MonoBehaviour
         //animator.SetBool("IsDead", true);
         animator.SetTrigger("Fall1");
 
-        //disable the enemy
-        GetComponent<Collider>().enabled = false;
-        this.enabled = false;
     }
 
 }

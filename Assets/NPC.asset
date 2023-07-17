@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848c863e0d4935f4ba08537dadcaebf5, type: 3}
   m_Name: NPC
   m_EditorClassIdentifier: 
-  healthEnemy: 0
-  tolalHealthEnemy: 0
-  amountofDamage: 0
+  healthEnemy: 100
+  tolalHealthEnemy: 100
+  amountofDamage: 20
