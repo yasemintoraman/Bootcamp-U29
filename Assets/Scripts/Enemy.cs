@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int currentHealth, maxHealth;
 
+    private bool canTakeDamage = true;
+
 
     void Start()
     {
@@ -17,17 +19,31 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-
-        //maybe play hurt animation
-
-        animator.SetTrigger("Hit1");
-
-        if (currentHealth == 0)
+        if (canTakeDamage)
         {
-            Die();
-        }
+            currentHealth -= damage;
 
+            //maybe play hurt animation
+
+            animator.SetTrigger("Hit1");
+
+            if (currentHealth == 0)
+            {
+                Die();
+            }
+
+            StartCoroutine(StartDamageCooldown());
+        }
+    }
+
+    private IEnumerator StartDamageCooldown()
+    {
+        canTakeDamage = false;
+
+        // Wait for a certain duration before the enemy can take damage again
+        yield return new WaitForSeconds(1f); // Change the duration as needed
+
+        canTakeDamage = true;
     }
 
     void Die()

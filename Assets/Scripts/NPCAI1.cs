@@ -14,7 +14,7 @@ public class NPCAI : MonoBehaviour
     public float walkPointRange;  //hareket edebilecegimiz mesafe
 
     public float timeBetweenAttacks; //attackler arasi zaman
-    private bool alreadyAttacked;  //attack yapip yapmadigimiz kontrol etmek icin
+    private bool alreadyAttacked = true;  //attack yapip yapmadigimiz kontrol etmek icin
     public GameObject sphere; //saldirmak icin sphere atmak gibi
 
     public float sightRange, attackRange; //gorus alani, saldiri alani
@@ -115,8 +115,9 @@ public class NPCAI : MonoBehaviour
         {
             //vurdugumuz dusmanin adini soyluyor
             //Debug.Log("We hit " + enemy.name);
-
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+          
+                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+             
         }
         /*
         if (!alreadyAttacked)
@@ -134,7 +135,7 @@ public class NPCAI : MonoBehaviour
         }*/
 
         Invoke(nameof(ResetAttack), timeBetweenAttacks * Time.deltaTime);
-       
+
     }
 
     void ResetAttack() //atagi durdururuz
