@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7912766380302983391}
   - component: {fileID: 549742097733968817}
   - component: {fileID: 6989729679100686934}
+  - component: {fileID: 1580663574539827998}
   m_Layer: 0
   m_Name: Mill
   m_TagString: Untagged
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1580663574539827998
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108627002666417916}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3324608818864385758, guid: 8525e4b4ab3488c418ffe3a78569d5e1, type: 3}
 --- !u!1 &4645130542093163107
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +118,7 @@ GameObject:
   - component: {fileID: 8976477405824192380}
   - component: {fileID: 6590505604096752566}
   - component: {fileID: 930929509433621087}
+  - component: {fileID: 4556718235607079621}
   m_Layer: 0
   m_Name: Windmill
   m_TagString: Untagged
@@ -116,7 +140,7 @@ Transform:
   m_Children:
   - {fileID: 7912766380302983391}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 220}
 --- !u!33 &8976477405824192380
 MeshFilter:
@@ -189,3 +213,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!64 &4556718235607079621
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4645130542093163107}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -112859248700104106, guid: 8525e4b4ab3488c418ffe3a78569d5e1, type: 3}

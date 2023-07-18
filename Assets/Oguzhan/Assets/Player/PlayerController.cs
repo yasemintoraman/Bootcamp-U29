@@ -9,12 +9,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float JumpForce;
-    public GameObject mainCamera;
     private float horizontalInput;
     private float verticalInput;
     private float jumpInput;
-    public Animator playerAnimator;
-    private float tempCameraPositionCount;
+    private Animator playerAnimator;
 
     private Rigidbody rigidbodyPlayer;
     // Start is called before the first frame update
@@ -28,6 +26,10 @@ public class PlayerController : MonoBehaviour
     {
         IsonGround = true;
     }
+    private void Update()
+    {
+
+    }
     private void FixedUpdate()
     {
         if (GameManager.IsDialogStarted == false)
@@ -35,36 +37,21 @@ public class PlayerController : MonoBehaviour
             GetMovementInput();
             GetJumpInput();
             GetAttackInput();
-            GetShieldInput();
-        }
-        Debug.Log(gameObject.transform.forward);
-    }
-
-    private void GetShieldInput()
-    {
-        if (Input.GetMouseButton(1))
-        {
-            playerAnimator.SetBool("IsShield",true);
-        }
-        else
-        {
-            playerAnimator.SetBool("IsShield", false);
-
         }
     }
+
+
 
     private void GetMovementInput()
     {
-        if (!playerAnimator.GetBool("IsAttacked") && !playerAnimator.GetBool("IsShield"))
+        if (!playerAnimator.GetBool("IsAttacked"))
         {
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
-            Vector3 moveDirection = transform.TransformDirection(new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime));
+            Vector3 moveDirection = new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime);
+            rigidbodyPlayer.velocity = new Vector3(horizontalInput * speed * Time.deltaTime, rigidbodyPlayer.velocity.y, verticalInput * speed * Time.deltaTime);
 
-            rigidbodyPlayer.velocity = transform.TransformDirection(
-                new Vector3(horizontalInput * speed * Time.deltaTime, rigidbodyPlayer.velocity.y, verticalInput * speed * Time.deltaTime));
 
-            //CheckPlayerMovement();
             SetBlendTreeValues(horizontalInput, verticalInput);
 
 
@@ -72,7 +59,6 @@ public class PlayerController : MonoBehaviour
             {
                 Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-                transform.Rotate(0, transform.rotation.y, 0);
             }
         }
 
@@ -86,7 +72,7 @@ public class PlayerController : MonoBehaviour
         jumpInput = Input.GetAxis("Jump");
         if (jumpInput != 0 && IsonGround)
         {
-            rigidbodyPlayer.velocity = Vector3.up * JumpForce * Time.deltaTime;
+            rigidbodyPlayer.velocity = Vector3.up * JumpForce;
             IsonGround = false;
         }
     }
@@ -120,31 +106,5 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetBool("IsAttacked", false);
         }
 
-    }
-
-    
-    private void CheckPlayerMovement()
-    {
-        if (Mathf.Abs(horizontalInput) >= 1 || Mathf.Abs(verticalInput) >= 1)
-        {
-            tempCameraPositionCount += Time.deltaTime;
-            
-        }
-        else
-        {
-            tempCameraPositionCount = 0;
-        }
-
-        if (tempCameraPositionCount >= 3)
-        {
-            SetCameraPositionWhileWalking();
-        }
-    }
-
-    private void SetCameraPositionWhileWalking()
-    {
-        mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric.x = gameObject.transform.forward.x * mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric.x;
-        mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric.z = gameObject.transform.forward.z * mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric.z;
-        tempCameraPositionCount = 0;
     }
 }
