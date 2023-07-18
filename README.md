@@ -117,4 +117,4 @@ cesaretiyle köy halkının hayranlığını kazanır. Genç, çiftçilik yapmay
 - **Asset Listesi**:
  [Assets](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/assetler.docx?raw=true)
 
-- **Oyunun Son Hali Final Version branchinde bulunmaktadır.**
+- **Oyunun Son Hali Final-Version branchinde bulunmaktadır.**
