@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float JumpForce;
+    public GameObject mainCamera;
     private float horizontalInput;
     private float verticalInput;
     private float jumpInput;
     public Animator playerAnimator;
+    private float tempCameraPositionCount;
 
     private Rigidbody rigidbodyPlayer;
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
             GetAttackInput();
             GetShieldInput();
         }
+        Debug.Log(gameObject.transform.forward);
     }
 
     private void GetShieldInput()
@@ -56,10 +59,12 @@ public class PlayerController : MonoBehaviour
         {
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
-            Vector3 moveDirection = new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime);
-            rigidbodyPlayer.velocity = new Vector3(horizontalInput * speed * Time.deltaTime, rigidbodyPlayer.velocity.y, verticalInput * speed * Time.deltaTime);
+            Vector3 moveDirection = transform.TransformDirection(new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime));
 
+            rigidbodyPlayer.velocity = transform.TransformDirection(
+                new Vector3(horizontalInput * speed * Time.deltaTime, rigidbodyPlayer.velocity.y, verticalInput * speed * Time.deltaTime));
 
+            //CheckPlayerMovement();
             SetBlendTreeValues(horizontalInput, verticalInput);
 
 
@@ -67,6 +72,7 @@ public class PlayerController : MonoBehaviour
             {
                 Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+                transform.Rotate(0, transform.rotation.y, 0);
             }
         }
 
@@ -114,5 +120,31 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetBool("IsAttacked", false);
         }
 
+    }
+
+    
+    private void CheckPlayerMovement()
+    {
+        if (Mathf.Abs(horizontalInput) >= 1 || Mathf.Abs(verticalInput) >= 1)
+        {
+            tempCameraPositionCount += Time.deltaTime;
+            
+        }
+        else
+        {
+            tempCameraPositionCount = 0;
+        }
+
+        if (tempCameraPositionCount >= 3)
+        {
+            SetCameraPositionWhileWalking();
+        }
+    }
+
+    private void SetCameraPositionWhileWalking()
+    {
+        mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric.x = gameObject.transform.forward.x * mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric.x;
+        mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric.z = gameObject.transform.forward.z * mainCamera.GetComponent<CamFollowPlayer>().cameraPositionIsometric.z;
+        tempCameraPositionCount = 0;
     }
 }

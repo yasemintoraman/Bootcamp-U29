@@ -325,7 +325,7 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: -10
+    m_Value: 60
   tint:
     m_OverrideState: 1
     m_Value: 50
@@ -356,7 +356,7 @@ MonoBehaviour:
     m_Value: 0
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+    m_Value: {r: 1, g: 0.94602066, b: 0.75849056, a: 1}
   dirtTexture:
     m_OverrideState: 1
     m_Value: {fileID: 0}
@@ -402,10 +402,10 @@ MonoBehaviour:
     m_Value: {r: 0.9925777, g: 1, b: 0, a: 1}
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.20754719, g: 0.18087874, b: 0.051690992, a: 1}
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 4000
   mipFogMaxMip:
     m_OverrideState: 0
     m_Value: 0.5
@@ -423,7 +423,7 @@ MonoBehaviour:
     m_Value: 500
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 200
+    m_Value: 300
   enableVolumetricFog:
     m_OverrideState: 0
     m_Value: 0
