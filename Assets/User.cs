@@ -6,12 +6,12 @@ using UnityEngine;
 public class User 
 {
     public string userName;
-    public int userScore;
+    public int userID;
 
     public User()
     {
-        userName = PlayerScores.playerName;
-        userScore = PlayerScores.playerScore;
+        userName = PlayerRegister.playerUserName;
+        userID = PlayerRegister.playerID;
 
     }
 }

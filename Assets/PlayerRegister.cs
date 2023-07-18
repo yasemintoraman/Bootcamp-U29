@@ -5,27 +5,27 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerScores : MonoBehaviour
+public class PlayerRegister : MonoBehaviour
 {
-    public TMP_Text scoreText;
+    public TMP_Text idText;
     private System.Random random = new System.Random();
 
     public TMP_InputField nameText;
 
-    public static int playerScore;
-    public static string playerName;
+    public static int playerID;
+    public static string playerUserName;
+
 
 
     void Start()
     {
-        playerScore = random.Next(0, 101);
-        scoreText.text = "Score: " + playerScore;
+        playerID = random.Next(0, 1001);
+        idText.text = "Player ID: " + playerID;
     }
 
     public void OnSubmit()
     {
-        Debug.Log("calsti");
-        playerName = nameText.text;
+        playerUserName = nameText.text;
         PostToDatabase();
     }
 
