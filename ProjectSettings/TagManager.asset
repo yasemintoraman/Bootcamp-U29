@@ -8,6 +8,10 @@ TagManager:
   - TwoandHalfAreaStart
   - Mirror
   - NPC
+  - Area
+  - Comlek
+  - Heykel
+  - Door
   layers:
   - Default
   - TransparentFX

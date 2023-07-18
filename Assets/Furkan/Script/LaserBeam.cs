@@ -81,8 +81,8 @@ public class LaserBeam
     void DoorOpen()
     {
 
-        GameObject.Find("DoorRock").transform.position = Vector3.MoveTowards(GameObject.Find("DoorRock").transform.position, GameObject.Find("TargetDoor").transform.position, 2f * Time.deltaTime);
-        GameObject.Find("DoorRock").transform.Rotate(Vector3.back * 50f * Time.deltaTime);
+        GameObject.Find("DoorRock").transform.position = Vector3.MoveTowards(GameObject.Find("DoorRock").transform.position, GameObject.Find("TargetDoor").transform.position, 6f * Time.deltaTime);
+        GameObject.Find("DoorRock").transform.Rotate(Vector3.back * 60f * Time.deltaTime);
                 
     }
 }

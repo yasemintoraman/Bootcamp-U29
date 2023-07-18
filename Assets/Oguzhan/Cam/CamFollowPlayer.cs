@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class CamFollowPlayer : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class CamFollowPlayer : MonoBehaviour
     [SerializeField] private GameObject mainPlayer;
     private GameObject mainCamera;
     // Update is called once per frame
+
     private void Awake()
     {
         transform.position = mainPlayer.transform.position + cameraPositionIsometric;

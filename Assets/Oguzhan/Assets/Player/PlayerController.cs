@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            playerAnimator.SetBool("IsShield", false);
             playerAnimator.SetBool("IsAttacked", false);
         }
 
