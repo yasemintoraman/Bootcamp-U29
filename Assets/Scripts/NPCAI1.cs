@@ -26,8 +26,8 @@ public class NPCAI : MonoBehaviour
     public LayerMask enemyLayers;
     public int attackDamage;
 
-    public Enemy playerCombat;
-    public Enemy2 npcState;
+    private Enemy playerCombat;
+    private Enemy2 npcState;
 
     private float destroyDelay = 1.0f;
 
@@ -45,6 +45,7 @@ public class NPCAI : MonoBehaviour
             };
 
         playerCombat = GameObject.FindGameObjectWithTag("Player").GetComponent<Enemy>();
+        npcState = GameObject.FindGameObjectWithTag("NPC").GetComponent<Enemy2>();
     }
 
     private void Awake() //oyun basladiginda
@@ -57,7 +58,9 @@ public class NPCAI : MonoBehaviour
 
         if (npcState.IsNpcDead)
         {
+            Debug.Log("2");
             animator.SetBool("IsDead", true);
+            destinationPointSet = false;
             //StartCoroutine(DestroyAfterDelay(destroyDelay));
             //return;
 
@@ -65,6 +68,7 @@ public class NPCAI : MonoBehaviour
         }
         else
         {
+            Debug.Log("1");
             //checksphere var olmayan bir collideri kullanabilmemizi saglar
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, player); //belirli bir yerden sonra sightimda old fark edicem
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, player); //cok fazla yaklastiktan sonra saldirmaya baslar
@@ -131,7 +135,7 @@ public class NPCAI : MonoBehaviour
             transform.LookAt(_player);
 
             animator.SetBool("attack1", true);
-            //animator.SetBool("attack2", true);
+            animator.SetBool("attack2", true);
 
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 

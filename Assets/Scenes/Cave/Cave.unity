@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4599.683, g: 3258.7056, b: 3251.2544, a: 1}
+  m_IndirectSpecularColor: {r: 4596.8384, g: 3259.7798, b: 3260.1294, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2186,7 +2186,7 @@ PrefabInstance:
     - target: {fileID: 9173496368317649899, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1350
+      value: 1353.6
       objectReference: {fileID: 0}
     - target: {fileID: 9173496368317649899, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
         type: 3}
@@ -2196,7 +2196,7 @@ PrefabInstance:
     - target: {fileID: 9173496368317649899, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 591.4
+      value: 580.1
       objectReference: {fileID: 0}
     - target: {fileID: 9173496368317649899, guid: 55fedf3c3c6355d41b849fa3ff0b49f0,
         type: 3}
@@ -2885,6 +2885,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: SKELETON
       objectReference: {fileID: 0}
+    - target: {fileID: 1349150361055734, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349150361055734, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349150361055734, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2903,7 +2915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1356
+      value: 1361.31
       objectReference: {fileID: 0}
     - target: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2911,7 +2923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 579.1
+      value: 555.03
       objectReference: {fileID: 0}
     - target: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2945,6 +2957,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23643263296634284, guid: dca8e056b77d49c4aafe4dbcc2bab713,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114242563573807930, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
     m_RemovedGameObjects: []
@@ -2957,11 +2974,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1349150361055734, guid: dca8e056b77d49c4aafe4dbcc2bab713,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 757087368}
+      addedObject: {fileID: 757087367}
     - targetCorrespondingSourceObject: {fileID: 1349150361055734, guid: dca8e056b77d49c4aafe4dbcc2bab713,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 757087367}
+      addedObject: {fileID: 757087373}
+    - targetCorrespondingSourceObject: {fileID: 1349150361055734, guid: dca8e056b77d49c4aafe4dbcc2bab713,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 757087368}
   m_SourcePrefab: {fileID: 100100000, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
 --- !u!1001 &448049999
 PrefabInstance:
@@ -3907,8 +3928,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   attackDamage: 10
-  playerCombat: {fileID: 0}
-  npcState: {fileID: 0}
 --- !u!65 &673740949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3928,7 +3947,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.7430115, y: 2.2071586, z: 3.317629}
+  m_Size: {x: 3.7430115, y: 2.2071586, z: -3.317629}
   m_Center: {x: 0.14827126, y: 0.60357887, z: -0.036077745}
 --- !u!114 &673740950
 MonoBehaviour:
@@ -4101,19 +4120,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   destinationPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 100
-  timeBetweenAttacks: 2
-  sightRange: 20
-  attackRange: 10
+  walkPointRange: 500
+  timeBetweenAttacks: 10
+  sightRange: 70
+  attackRange: 6
   playerInSightRange: 0
   playerInAttackRange: 0
   attackPoint: {fileID: 1747130353}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  attackDamage: 50
-  playerCombat: {fileID: 807842660}
-  npcState: {fileID: 757087368}
+  attackDamage: 10
 --- !u!114 &757087368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4144,7 +4161,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -4158,6 +4175,27 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 416857937}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &757087373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757087366}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.5414736, y: 7.1179624, z: 1.7737871}
+  m_Center: {x: -0.14354564, y: 3.0589817, z: 0.14757697}
 --- !u!1 &757179422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,7 +4635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 177245833}
   currentHealth: 0
-  maxHealth: 10000
+  maxHealth: 100
   IsPlayerDead: 0
 --- !u!1001 &808509943
 PrefabInstance:
@@ -11215,17 +11253,17 @@ PrefabInstance:
     - target: {fileID: 8349397572283510614, guid: fd02805ee801de64a828e8190cac7784,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1364.63
+      value: 1375.87
       objectReference: {fileID: 0}
     - target: {fileID: 8349397572283510614, guid: fd02805ee801de64a828e8190cac7784,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.99083
+      value: 52.68
       objectReference: {fileID: 0}
     - target: {fileID: 8349397572283510614, guid: fd02805ee801de64a828e8190cac7784,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 576.16
+      value: 562.75
       objectReference: {fileID: 0}
     - target: {fileID: 8349397572283510614, guid: fd02805ee801de64a828e8190cac7784,
         type: 3}
@@ -11325,7 +11363,7 @@ PrefabInstance:
     - target: {fileID: 8688803186435683820, guid: fd02805ee801de64a828e8190cac7784,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8688803186435683820, guid: fd02805ee801de64a828e8190cac7784,
         type: 3}
