@@ -115,6 +115,6 @@ cesaretiyle köy halkının hayranlığını kazanır. Genç, çiftçilik yapmay
   - Toplantı saati 23:00'dan herkese uygun olacak saatlere değiştirildi.
   - Daha aktif bir süreç için daily toplantılarının bir kısmının Discord üzerinden online olarak yapılmasına karar verildi.
 - **Asset Listesi**:
-- [Assets](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/assetler.docx?raw=true)
+ [Assets](https://github.com/YaseminToraman/Bootcamp-U29/blob/main/ProjectManagement/Sprint3/assetler.docx?raw=true)
 
 - **Oyunun Son Hali Final Version branchinde bulunmaktadır.**
